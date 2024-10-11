@@ -12,15 +12,15 @@ class Chair {
     // constructors
     Chair() {
         prices = new double[SIZE];
-        legs = 0;
-        for (int i = 0; i < SIZE; i++)
-        prices[i] = 0;
-    }
-    Chair(int l) {
-        prices = new double[SIZE];
         legs = rand() % 2 + 3;
         for (int i = 0; i < SIZE; i++)
-        prices[i] = (rand() % 90000 + 10000) / 100.0;
+            prices[i] = (rand() % 90000 + 10000) / 100.0;
+    }
+    Chair(int l, const double p[SIZE]) {
+        prices = new double[SIZE];
+        legs = l;
+        for (int i = 0; i < SIZE; i++)
+            prices[i] = p[i];
     }
 
     // setters and getters
