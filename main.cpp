@@ -1,5 +1,8 @@
 #include <iostream>
 #include <iomanip>
+#include <cstdlib>
+#include <ctime>
+
 using namespace std;
 const int SIZE = 3;
 
@@ -49,13 +52,11 @@ int main() {
 
     //creating pointer to first chair object
     Chair *chairPtr = new Chair;
-    chairPtr->setLegs(4);
-    chairPtr->setPrices(121.21, 232.32, 414.14);
     chairPtr->print();
 
     //creating dynamic chair object with constructor
-    Chair *livingChair = new Chair(3);
-    livingChair->setPrices(525.25, 434.34, 252.52);
+    double price[SIZE]= {525.25, 434.34, 252.52};
+    Chair *livingChair = new Chair(3, price);
     livingChair->print();
     delete livingChair;
     livingChair = nullptr;
